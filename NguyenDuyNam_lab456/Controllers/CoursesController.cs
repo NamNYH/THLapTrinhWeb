@@ -1,10 +1,11 @@
 ﻿
-using NguyenDuyNam_lab456.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using NguyenDuyNam_lab456.Models;
+using NguyenDuyNam_lab456.ViewModels;
 
 namespace NguyenDuyNam_lab456.Controllers
 {
@@ -18,11 +19,11 @@ namespace NguyenDuyNam_lab456.Controllers
         // GET: Courses
         public ActionResult Create()
         {
-            var ViewModel = new CourseViewModels
+            var ViewModels = new CourseViewModels
             {
                 Categories = _dbContext.Categories.ToList()
             };
-            return View(ViewModel);
+            return View(ViewModels);
         }
     }
 }
