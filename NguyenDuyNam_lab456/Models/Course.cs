@@ -20,5 +20,6 @@ namespace NguyenDuyNam_lab456.Models
         [Required]
         public byte CategoryId { get; set; }
 
+
     }
 }
