@@ -1,11 +1,12 @@
-﻿@model IEnumerable<NguyenDuyNam_lab456.Models.Courses>
+﻿@model NguyenDuyNam_lab456.ViewModels.CourseViewModel
 @{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Attending";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+<h2>Attending</h2>
 <div class="row">
-    <ul>
-        @foreach(var course in Model)
+    <ul class="course">
+        @foreach (var course in Model.UpcommingCourses)
         {
             <li>
                 <div class="date">
@@ -23,7 +24,7 @@
                         {
                             <button class="btn btn-default btn-sm js-toggle-follow" data-user-id="@course.Lecturer">Follow</button>
                         }
-                       
+
                     </span>
                     <span class="category">
                         @course.Category.Name
@@ -36,7 +37,7 @@
             </li>
         }
     </ul>
-    @section scripts{
+    @*@section scripts{
         <script>
             $(document).ready(function () {
                 $(".js-toggle-attendance").click(function (e) {
@@ -58,12 +59,13 @@
                         .done(function () {
                             button.text("Following");
                         })
-                  
+
                         .fail(function () {
                             alert("Something failed!");
                         });
                 });
             });
         </script>
-        }
+    }*@
 </div>
+

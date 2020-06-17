@@ -2,10 +2,24 @@
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+
 namespace NguyenDuyNam_lab456.Models
 {
     public class ApplicationUser : IdentityUser
     {
+        [Required]
+        [StringLength(255)]
+        public string Name { get; set; }
+        public ICollection<Following> Followers { get; set; }
+        public ICollection<Following> Followees { get; set; }
+        public ApplicationUser()
+        {
+            Followers = new Collection<Following>();
+            Followees = new Collection<Following>();
+        }
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
