@@ -7,7 +7,7 @@ namespace NguyenDuyNam_lab456.Models
     {
         public DbSet<Courses> Course { get; set; }
         public DbSet<Category> Categories { get; set; }
-        public DbSet<Following> Attendances { get; set; }
+        public DbSet<Attendance> Attendances { get; set; }
         public DbSet<Following> Followings { get; set; }
         public object Courses { get; internal set; }
 
@@ -23,7 +23,7 @@ namespace NguyenDuyNam_lab456.Models
         }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Following>()
+            modelBuilder.Entity<Attendance>()
                 .HasRequired(a => a.Courses)
                 .WithMany()
                 .WillCascadeOnDelete(false);

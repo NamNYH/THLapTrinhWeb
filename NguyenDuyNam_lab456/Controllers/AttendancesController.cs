@@ -12,13 +12,15 @@ namespace NguyenDuyNam_lab456.Controllers
 {
     public class AttendancesController : ApiController
     {
+        private readonly ApplicationDbContext _dbContext = new ApplicationDbContext();
+
         [HttpPost]
         public IHttpActionResult Attend(AttendanceDto attendanceDto)
         {
             var userId = User.Identity.GetUserId();
-            if (_dbContext.Attendances.Any(a => a.AttendeeId == userId && a.CourseId == courseId))
+            if (_dbContext.Attendances.Any(a => a.AttendeeId == userId && a.CourseId == attendanceDto.CourseId))
                 return BadRequest("The Attendance altrady exists !");
-            var attendance = new Following
+            var attendance = new Attendance
             {
                 CourseId = attendanceDto.CourseId,
                 AttendeeId = userId

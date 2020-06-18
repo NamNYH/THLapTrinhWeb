@@ -6,7 +6,7 @@ using System.Web;
 
 namespace NguyenDuyNam_lab456.ViewModels
 {
-    public class CourseViewModel
+    public class CoursesViewModel
     {
         public IEnumerable<Courses> UpcommingCourses { get; set; }
         public bool ShowAction { get; set; }

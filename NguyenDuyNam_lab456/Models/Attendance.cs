@@ -9,7 +9,7 @@ using System.Web.Http;
 
 namespace NguyenDuyNam_lab456.Models
 {
-    public class Following
+   public class Attendance
     {
         public Courses Courses { get; set; }
         [Key]
@@ -22,6 +22,7 @@ namespace NguyenDuyNam_lab456.Models
         public string AttendeeId { get; set; }
         public string FolloweeId { get; internal set; }
     }
+    /*
     [Authorize]
     public class AttendancesController : ApiController
     {
@@ -42,5 +43,5 @@ namespace NguyenDuyNam_lab456.Models
             _dbContext.SaveChanges();
             return Ok();
         }
-    }
+    }*/
 }

@@ -22,7 +22,7 @@ namespace NguyenDuyNam_lab456.Controllers
                 .Where(c => c.DateTime > DateTime.Now);
             return View(upcommingCourses);
 
-            var viewModel = new CourseViewModel
+            var viewModel = new CoursesViewModel
             {
                 UpcommingCourses = upcommingCourses,
                 ShowAction = User.Identity.IsAuthenticated
