@@ -10,5 +10,10 @@ namespace NguyenDuyNam_lab456.ViewModels
     {
         public IEnumerable<Courses> UpcommingCourses { get; set; }
         public bool ShowAction { get; set; }
+        ublic string Date { get; internal set; }
+        public List<Category> Categories { get; internal set; }
+        public byte Category { get; internal set; }
+        public string Place { get; internal set; }
+        public string Time { get; internal set; }
     }
 }
